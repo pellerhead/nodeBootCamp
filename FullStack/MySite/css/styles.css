@@ -4,29 +4,9 @@ body {
   margin: 0;
 }
 
-hr {
-  border-color: #00adb5;
-  border-style: none;
-  border-top-style: dotted;
-  border-width: 5px;
-  width: 5%;
-}
-
 h1 {
   color: #00adb5;
   margin-top: 0;
-}
-
-h2 {
-  color: #eeeeee;
-}
-
-h3 {
-  color: #eeeeee;
-}
-
-a {
-  color: #00adb5
 }
 
 div {
