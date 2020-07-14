@@ -2,11 +2,13 @@
 
 body {
   margin: 0;
+  text-align: center;
 }
 
 h1 {
   color: #00adb5;
-  margin-top: 0;
+  width: 10%;
+  margin: 0 auto /* short had for centering */
 }
 
 div {
@@ -22,10 +24,6 @@ p {
 .darktheme {
   background-color: #222831;
   padding: 20px;
-}
-
-.lighttheme {
-  background-color:  #eeeeee;
 }
 
 
