@@ -8,13 +8,19 @@ body {
 h1 {
   color: #00adb5;
   font-family: 'Sacramento', cursive;
+  font-size: 5.625rem;
+  margin: 50px auto 0 auto;
 }
 
 h2 {
+  color: #00adb5;
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: normal;
 }
 
 h3 {
+  color: #eeeeee;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -30,31 +36,51 @@ p {
 .top-container {
   background-color: #222831;
   position: relative;
-  padding-top: 100px;
+  padding-top: 10px;
+  padding-bottom: 300px;
 }
 
 .middle-container {
-
+  padding-top: 25px;
+  margin: auto;
+  position: relative;
 }
 
-.bottom-container {
+.bottom-container {}
 
+.profile {
+  width: 50%;
+  margin: auto;
+  text-align: left;
+  line-height: 2;
+  padding-bottom: 50px;
+}
+
+.skill-row {
+  width: 50%;
+  margin: 100px auto 100px auto;
+  text-align: left;
+  line-height: 2;
 }
 
 .pro {
   text-decoration: underline;
 }
 
-.top-cloud {
-  position: absolute;
-  right: 300px;
-  top: 50px;
+.profile-img {
+  margin: auto;
 }
 
-.bottom-cloud {
-  position: absolute;
-  left: 300px;
-  bottom: 300px;
+.idea-img {
+  width: 800px;
+  height: 400px;
+  padding-top:50px;
+}
+
+.skills-image {
+  width: 25%;
+  float: left;
+  padding-right: 20px;
 }
 
 /******************************  ID SELECTORS  *********************************/
