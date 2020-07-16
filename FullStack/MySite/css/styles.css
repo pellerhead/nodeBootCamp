@@ -17,6 +17,7 @@ h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   font-weight: normal;
+  text-align: center;
 }
 
 h3 {
@@ -32,12 +33,16 @@ p {
   color: #eeeeee;
 }
 
+li {
+  color: #eeeeee;
+}
+
 /******************************  CLASS SELECTORS  ******************************/
 .top-container {
   background-color: #222831;
   position: relative;
   padding-top: 10px;
-  padding-bottom: 300px;
+  padding-bottom: 100px;
 }
 
 .middle-container {
@@ -58,7 +63,7 @@ p {
 
 .skill-row {
   width: 50%;
-  margin: 100px auto 100px auto;
+  margin: 75px auto 75px auto;
   text-align: left;
   line-height: 2;
 }
@@ -67,20 +72,20 @@ p {
   text-decoration: underline;
 }
 
-.profile-img {
-  margin: auto;
-}
-
 .idea-img {
   width: 800px;
-  height: 400px;
-  padding-top:50px;
+  height: 600px;
+  margin-top: 50px;
+}
+
+.profile-img {
+  margin: 10px auto 20px auto;
+  display: block;
 }
 
 .skills-image {
   width: 25%;
   float: left;
-  padding-right: 20px;
 }
 
 /******************************  ID SELECTORS  *********************************/
