@@ -6,7 +6,7 @@ body {
 }
 
 h1 {
-  color: #00adb5;
+  color: #3282b8;
   font-size: 5.625rem;
   margin: 50px auto 0 auto;
   font-family: 'Sacramento', cursive;
@@ -22,7 +22,7 @@ h2 {
 }
 
 h3 {
-  color: #eeeeee;
+  color: #3282b8;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -36,7 +36,7 @@ p {
 }
 
 hr {
-  border: dotted #3282b8 6px;
+  border: dotted #1f4068 6px;
   border-bottom: none;
   width: 4%;
   margin: 50px auto;
@@ -78,8 +78,6 @@ a:hover {
   margin-top: 50px;
 }
 
-.profile-img {}
-
 .profile {
   width: 50%;
   margin: auto;
@@ -111,7 +109,7 @@ a:hover {
   float: right;
 }
 
-.contact-message {
+.contact-me {
   width: 40%;
   margin: 40px auto 60px;
 }
