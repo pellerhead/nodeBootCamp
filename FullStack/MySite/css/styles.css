@@ -45,6 +45,13 @@ hr {
 a {
   color: #3282b8;
   font-family: 'Montserrat', sans-serif;
+  margin: 10px 20px;
+  text-decoration: none;
+}
+
+/* psuedo classes */
+a:hover {
+  color: #eeeeee;
 }
 
 /******************************  CLASS SELECTORS  ******************************/
@@ -147,6 +154,12 @@ a {
   -moz-border-radius: 20px;
   border-radius: 20px;
   text-decoration: none;
+}
+
+.copyright {
+  color: #eeeeee;
+  font-size: 0.75rem;
+  padding: 20px 0;
 }
 
 /******************************  ID SELECTORS  *********************************/
