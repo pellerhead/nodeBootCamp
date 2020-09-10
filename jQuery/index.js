@@ -9,6 +9,11 @@ $("img").attr("alt","symbols");
 
 $("a").attr("href", "https://www.yahoo.com");
 
+$("h1").before("<button>New1</button>");
+$("h1").after("<button>New2</button>");
+$("h1").prepend("<button>New3</button>");
+$("h1").append("<button>New4</button>");
+
 $("button").click(function() {
   $("h1").css("color", "purple");
 });
@@ -23,4 +28,8 @@ $(document).keypress(function(event) {
 
 $("h1").on("mouseover",function() {
   $("h1").css("color", "green");
+});
+
+$("button").click(function() {
+  $("h1").slideUp().slideDown().animate({opacity: 0.5});
 });
