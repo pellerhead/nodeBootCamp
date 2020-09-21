@@ -7,6 +7,10 @@ const app =  express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.listen(3000, function() {
+  console.log("Server is running on port 3000");
+});
+
 app.get("/", function(req, res) {
   console.log(__dirname);
   res.sendFile(__dirname + "/index.html");
@@ -22,6 +26,20 @@ app.post("/", function(req, res) {
   res.send("Result: " + result);
 });
 
-app.listen(3000, function() {
-  console.log("Server is running on port 3000");
+app.get("/bmicalculator", function(req, res) {
+  console.log(__dirname);
+  res.sendFile(__dirname + "/bmicalculator.html");
+});
+
+app.post("/bmicalculator", function(req, res) {
+  console.log(req.body);
+
+  var weight = parseFloat(req.body.weight);
+  var height = parseFloat(req.body.height);
+
+  var bmi = weight / (height * height);
+
+  console.log(bmi);
+
+  res.send("Your BMI: " + bmi);
 });
