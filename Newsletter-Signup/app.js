@@ -6,15 +6,25 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.get("/", function(req, res) {
-  //res.sendFile(__dirname + "/index.html");
-  console.log("Get");
+  console.log("GET");
+
+  res.sendFile(__dirname + "/signup.html");
 });
 
 app.post("/", function(req, res) {
-console.log("Post");
+  console.log("POST");
+
+  var firstName = req.body.fName;
+  var lastName = req.body.lName;
+  var email = req.body.email;
+
+  console.log(firstName + " " + lastName + " " + email);
 });
 
 app.listen(3000, function() {
