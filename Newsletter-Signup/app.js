@@ -25,7 +25,16 @@ app.post("/", function(req, res) {
   var email = req.body.email;
 
   console.log(firstName + " " + lastName + " " + email);
+
+  // res.sendFile(__dirname + "/success.html");
+
+  res.sendFile(__dirname + "/failure.html");
+
 });
+
+app.post("/failure", function(req, res) {
+  res.redirect("/");
+})
 
 app.listen(3000, function() {
   console.log("Server is running on port 3000");
