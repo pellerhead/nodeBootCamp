@@ -1,7 +1,7 @@
 {
   "name": "FruitsProject",
   "version": "1.0.0",
-  "description": "",
+  "description": "Learning how to use MongoDB",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mogodb": "0.0.1-security",
     "mongodb": "^3.6.2"
-  }
+  },
+  "devDependencies": {}
 }

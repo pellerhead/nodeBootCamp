@@ -1,18 +1,17 @@
 //jshint esversion:6
-const MongoClient = require("mongodb").MongoCLient;
+const MongoClient = require('mongodb').MongoClient
+const Server = require('mongodb').Server;
+
 const assert = require('assert');
 
-const url = "mongodb://localhost:27017";
+const mongoClient = new MongoClient(new Server('localhost', 27017));
 
-const dbName = 'fruitsDB';
+mongoClient.connect(function(err, mongoClient) {
+  const db = mongoClient.db("fruitDB");
 
-const client = new MongoClient(url);
+  assert.equal(null, err);
 
-client.connect(function(err) {
-    assert.equal(null, err);
-    console.o=log("Connected successfully to server");
+  console.log("Connected successfully to server");
 
-    const db = client.db(dbName);
-
-    client.close();
+  mongoClient.close();
 });
