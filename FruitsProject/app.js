@@ -1,47 +1,41 @@
 //jshint esversion:6
-const MongoClient = require('mongodb').MongoClient
-const Server = require('mongodb').Server;
+const mongoose = require('mongoose');
 
-const assert = require('assert');
+mongoose.connect("mongodb://127.0.0.1:27017/fruitsDB", { useNewUrlParser: true, useUnifiedTopology: true });
 
-const mongoClient = new MongoClient(new Server('localhost', 27017));
-
-mongoClient.connect(function(err, mongoClient) {
-  const db = mongoClient.db("fruitDB");
-
-  assert.equal(null, err);
-
-  console.log("Connected successfully to server");
-
-//  insertDocuments(db,function() {
-//    mongoClient.close();
-//  });
-
-  findDocuments(db,function() {
-    mongoClient.close();
-  });
-
+const fruitSchema = new mongoose.Schema ( {
+  name: String,
+  rating: Number,
+  review: String
 });
 
-const insertDocuments = function(db, callback) {
-    const collection = db.collection('fruits');
+const Fruit = mongoose.model("Fruit", fruitSchema);
 
-    collection.insertMany( [ {a : 1}, {a : 2}, {a : 3} ], function(err, result) {
-      assert.equal(err, null);
-      assert.equal(3, result.result.n);
-      assert.equal(3, result.ops.length);
-      console.log("Inserted 3 documents into the collection");
-      callback(result);
-    });
-};
+const apple = new Fruit ({
+  name: "Apple",
+  rating: 8,
+  review: "Love me some Honeycrisp"
+});
 
-const findDocuments = function(db, callback) {
-    const collection = db.collection('fruits');
+apple.save();
 
-    collection.find({}).toArray(function(err, result) {
-      assert.equal(err, null);
-      console.log("FOund the following records");
-      console.log(result);
-      callback(result);
-    });
-};
+const banana = new Fruit ({
+  name: "Banana",
+  rating: 8,
+  review: "Yellow heaven"
+});
+
+const tomato = new Fruit ({
+  name: "Tomato",
+  rating: 4,
+  review: "Is it really fruit?"
+});
+
+Fruit.insertMany( [ banana, tomato ], function(err) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("added more fruit");
+  }
+
+});
