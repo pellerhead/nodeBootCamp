@@ -29,25 +29,41 @@ const apple = new Fruit({
 
 //apple.save();
 
-const banana = new Fruit({
-  name: "Banana",
-  rating: 2,
-  review: "Yellow heaven"
+const personSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+  favouriteFruit: fruitSchema
 });
 
-const tomato = new Fruit({
-  name: "Tomato",
-  rating: 4,
-  review: "Is it really fruit?"
+const Person = mongoose.model("Person", personSchema);
+
+const greg = new Person({
+  name: "Greg",
+  age: 55,
+  favouriteFruit: apple
 });
 
-Fruit.insertMany([banana, tomato, apple], function(err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("added more fruit");
-  }
-});
+//greg.save();
+
+// const banana = new Fruit({
+//   name: "Banana",
+//   rating: 2,
+//   review: "Yellow heaven"
+// });
+//
+// const tomato = new Fruit({
+//   name: "Tomato",
+//   rating: 4,
+//   review: "Is it really fruit?"
+// });
+//
+// Fruit.insertMany([banana, tomato, apple], function(err) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("added more fruit");
+//   }
+// });
 
 Fruit.find(function(err, fruits) {
   console.log("Show all the fruit");
@@ -59,6 +75,42 @@ Fruit.find(function(err, fruits) {
       console.log(fruit.name);
     });
   }
+});
+
+Person.find(function(err, persons) {
+  console.log("Show all the persons.");
+
+  if (err) {
+    console.log(err);
+  } else {
+    persons.forEach(function(person) {
+      console.log(person.name);
+    });
+  }
 
   mongoose.connection.close();
 });
+
+// Fruit.updateOne({_id: "5f8b1538a5e3680be45e4792"}, {name: "Peach"}, function(err) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("Succesfully updated the document.");
+//   }
+// });
+//
+// Fruit.deleteOne({name: "Peach"}, function(err) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("Succesfully delete the document.");
+//   }
+// });
+
+// Fruit.deleteMany({name: "Banana"}, function(err) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("Succesfully deleted the documents.");
+//   }
+// });
